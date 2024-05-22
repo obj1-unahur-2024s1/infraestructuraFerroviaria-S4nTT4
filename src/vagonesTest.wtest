@@ -1,0 +1,22 @@
+import vagones.*
+
+describe "Test de Vagones"{
+	const vp1 = new VagonPasajero(ancho=2, largo=10, banio=false)
+	const vp2 = new VagonPasajero(ancho=4, largo=10, ordenado=false)
+	
+	test"Cantidad de personas de un vagon de pasajeros de ancho 2 y largo 10 ordenado"{
+		assert.equals(80,vp1.cantidadDePasajeros())
+	}
+	
+	test"Cantidad de personas de un vagon de pasajeros de ancho 4 y largo 10 no ordenado"{
+		assert.equals(85,vp2.cantidadDePasajeros())
+	}
+	
+	test"Peso maximo de un vagon de pasajeros sin banio"{
+		assert.equals(800,vp1.cantidadMaximaDeCarga())
+	}
+	
+	test"Peso maximo de un vagon de pasajeros con banio"{
+		assert.equals(300,vp2.cantidadMaximaDeCarga())
+	}
+}
